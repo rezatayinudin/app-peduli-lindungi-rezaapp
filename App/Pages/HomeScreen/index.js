@@ -6,7 +6,8 @@ import {
     StyleSheet,
     StatusBar, 
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert
 } from 'react-native';
 import {
     IconProfile,
@@ -24,6 +25,7 @@ import {
     IconFindHospital,
     IconStatisCovid
 } from '../../assets';
+
 
 export default HomeScreen = ({navigation}) => {
     return (
@@ -84,14 +86,27 @@ export default HomeScreen = ({navigation}) => {
               <Text style={styles.textehac}>EHAC</Text>
             </View>
           </View>
+
           <View style={styles.row2}>
               <View style={styles.icon4}>
+              <TouchableOpacity 
+                onPress={() => 
+                  Alert.alert("informasi", "Sedang dalam pengembangan", [
+                    {
+                      text: "ok",
+                      onPress: () => console.log("Ok"),
+                    },
+                  ])
+                }>
                 <Image source={IconTravelRegulation} style={styles.travel}/>
                 <Text style={styles.texttravel}>Travel Regulations</Text>
+                </TouchableOpacity>
               </View>
               <View style={styles.icon5}>
+             
                 <Image source={IconTelemedicine} style={styles.telemedicine}/>
                 <Text style={styles.texttelemedicine}>Telemedicine</Text>
+                
               </View>
               <View style={styles.icon6}>
                 <Image source={IconHealthcare} style={styles.healthcare}/>
